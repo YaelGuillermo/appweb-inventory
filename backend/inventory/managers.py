@@ -50,8 +50,8 @@ class CategoryManager(serializers.ModelSerializer):
         model = CategoryModel
 
     def validate_code(self, value):
-        value = validate_min_value(value, 10000)
-        value = validate_max_value(value, 30000)
+        value = validate_min_value(value, 21000)
+        value = validate_max_value(value, 32000)
         return value
 
     def validate_name(self, value):

@@ -62,7 +62,7 @@ const AuthenticatedNavbar: React.FC<{
           className="p-2 rounded flex items-center cursor-pointer"
           onClick={handleProfile}
         >
-          {user?.first_name}
+          {user?.first_name} {user?.last_name}
           <Avatar className="ml-2">
             <AvatarImage src="https://github.com/shadcn.png" />
             <AvatarFallback>a</AvatarFallback>

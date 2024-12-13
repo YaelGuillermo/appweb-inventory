@@ -42,7 +42,7 @@ admin.site.register(ProductModel, ProductAdmin)
 
 class InventoryAdmin(admin.ModelAdmin):
     list_display = ('product', 'location', 'quantity', 'availability')
-    search_fields = ('product__name', 'location__name')
+    search_fields = ('product__name', 'location__name', 'quantity')
     list_filter = ('product', 'location')
     readonly_fields = ('quantity',)
 
