@@ -29,7 +29,7 @@ The system allows businesses to manage products, stock levels, and inventory tra
 - Vite
 - Axios
 - React Router
-- TailwindCSS (optional)
+- TailwindCSS
 
 ### Backend
 - Django
@@ -42,65 +42,50 @@ The system allows businesses to manage products, stock levels, and inventory tra
 ## Project Structure
 
 ```
-
 inventory-system/
 │
 ├── backend/
-│   ├── inventory_project/
-│   │   ├── settings.py
-│   │   ├── urls.py
-│   │   └── asgi.py
-│   │
-│   ├── inventory/
-│   │   ├── models.py
-│   │   ├── views.py
-│   │   ├── serializers.py
-│   │   ├── urls.py
-│   │   └── admin.py
-│   │
-│   ├── manage.py
-│   └── requirements.txt
+│   ├── accounts/           # User accounts module
+│   ├── core/               # Core configuration
+│   ├── inventory/          # Inventory module
+│   ├── venv/               # Virtual environment
+│   ├── .env.dev            # Environment variables
+│   ├── manage.py           # Django manager
+│   └── requirements.txt    # Dependencies
 │
 ├── frontend/
+│   ├── public/             # Public files
 │   ├── src/
-│   │   ├── api/
-│   │   │   └── client.ts
-│   │   │
-│   │   ├── components/
-│   │   │   ├── ProductTable.tsx
-│   │   │   ├── StockCard.tsx
-│   │   │   └── TransactionList.tsx
-│   │   │
-│   │   ├── pages/
-│   │   │   ├── Dashboard.tsx
-│   │   │   ├── Products.tsx
-│   │   │   └── Transactions.tsx
-│   │   │
-│   │   ├── types/
-│   │   │   └── inventory.ts
-│   │   │
-│   │   ├── App.tsx
-│   │   └── main.tsx
+│   │   ├── assets/         # Images and resources
+│   │   ├── components/     # Reusable components
+│   │   ├── constants/      # Constants
+│   │   ├── hocs/           # Higher Order Components
+│   │   ├── hooks/          # Custom hooks
+│   │   ├── lib/            # Libraries and utilities
+│   │   ├── modules/        # Application modules
+│   │   ├── redux/          # Global state
+│   │   ├── routes/         # Application routes
+│   │   └── utils/          # Utilities
 │   │
+│   ├── index.html
 │   ├── package.json
-│   └── tsconfig.json
+│   └── vite.config.ts
 │
 └── README.md
-
-````
+```
 
 ---
 
-# Backend Setup (Django)
+## Backend Setup (Django)
 
-## 1. Clone Repository
+### 1. Clone Repository
 
 ```bash
 git clone https://github.com/yourusername/inventory-system.git
 cd inventory-system/backend
-````
+```
 
-## 2. Create Virtual Environment
+### 2. Create Virtual Environment
 
 ```bash
 python -m venv venv
@@ -109,7 +94,7 @@ python -m venv venv
 Activate:
 
 ```bash
-source venv/bin/activate
+source venv/bin/activate   # Linux/Mac
 ```
 
 Windows:
@@ -118,17 +103,81 @@ Windows:
 venv\Scripts\activate
 ```
 
-## 3. Install Dependencies
+### 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Example `requirements.txt`
+### 4. Run Migrations
 
+```bash
+python manage.py migrate
 ```
-Django
-djangorestframework
-djangorestframework-simplejwt
-django
+
+### 5. Create Superuser
+
+```bash
+python manage.py createsuperuser
+```
+
+### 6. Run Server
+
+```bash
+python manage.py runserver
+```
+
+---
+
+## Frontend Setup (React)
+
+### 1. Navigate to Frontend
+
+```bash
+cd ../frontend
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Run Server
+
+```bash
+npm run dev
+```
+
+---
+
+## Environment Variables
+
+Create `.env` file in the backend directory:
+
+```env
+DEBUG=True
+SECRET_KEY=your-secret-key
+DATABASE_URL=sqlite:///db.sqlite3
+```
+
+---
+
+## API Documentation
+
+API endpoints are available at `http://localhost:8000/api/`
+
+- `GET /api/products/` - List all products
+- `POST /api/products/` - Create new product
+- `GET /api/products/{id}/` - Get a product
+- `PUT /api/products/{id}/` - Update a product
+- `DELETE /api/products/{id}/` - Delete a product
+- `GET /api/transactions/` - List transactions
+- `POST /api/stock/adjust/` - Adjust stock
+
+---
+
+## License
+
+MIT License
 ```
