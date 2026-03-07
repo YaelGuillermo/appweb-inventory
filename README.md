@@ -39,43 +39,6 @@ The system allows businesses to manage products, stock levels, and inventory tra
 
 ---
 
-## Project Structure
-
-```
-inventory-system/
-│
-├── backend/
-│   ├── accounts/           # User accounts module
-│   ├── core/               # Core configuration
-│   ├── inventory/          # Inventory module
-│   ├── venv/               # Virtual environment
-│   ├── .env.dev            # Environment variables
-│   ├── manage.py           # Django manager
-│   └── requirements.txt    # Dependencies
-│
-├── frontend/
-│   ├── public/             # Public files
-│   ├── src/
-│   │   ├── assets/         # Images and resources
-│   │   ├── components/     # Reusable components
-│   │   ├── constants/      # Constants
-│   │   ├── hocs/           # Higher Order Components
-│   │   ├── hooks/          # Custom hooks
-│   │   ├── lib/            # Libraries and utilities
-│   │   ├── modules/        # Application modules
-│   │   ├── redux/          # Global state
-│   │   ├── routes/         # Application routes
-│   │   └── utils/          # Utilities
-│   │
-│   ├── index.html
-│   ├── package.json
-│   └── vite.config.ts
-│
-└── README.md
-```
-
----
-
 ## Backend Setup (Django)
 
 ### 1. Clone Repository
