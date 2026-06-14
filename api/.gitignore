@@ -1,0 +1,23 @@
+# SQLite database files
+db.sqlite3
+db.sqlite3-journal
+
+# Python
+*.pyc
+__pycache__/
+
+# macOS
+.DS_Store
+
+# VSCode
+.vscode/
+
+# Static files
+staticfiles/
+
+# Media uploads
+media/*
+
+# Environment directories
+env/*
+!env/.env.example
