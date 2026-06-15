@@ -1,16 +1,25 @@
 # SQLite database files
-db.sqlite3
 db.sqlite3-journal
+*.sqlite3
 
 # Python
-*.pyc
+*.py[cod]
+*$py.class
 __pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
 
 # macOS
 .DS_Store
+.AppleDouble
+.LSOverride
 
 # VSCode
 .vscode/
+!.vscode/extensions.json
 
 # Static files
 staticfiles/
@@ -21,3 +30,6 @@ media/*
 # Environment directories
 env/*
 !env/.env.example
+
+# Virtual environment
+venv/

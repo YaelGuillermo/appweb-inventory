@@ -30,6 +30,7 @@ MEDIA_URL = env("DJANGO_MEDIA_URL", default="/media/")
 
 # Application definition
 DJANGO_APPS = [
+    "daphne",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -40,7 +41,6 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-    "daphne",
     "corsheaders",
     "rest_framework",
     "django_filters",
@@ -53,7 +53,8 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    "core_apps.accounts",
+    "database.apps.DatabaseConfig",
+    #"core_apps.accounts",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -95,26 +96,33 @@ TEMPLATES = [
 # ============================================
 # DATABASE - POSTGRESQL
 # ============================================
-USE_POSTGRES = env.bool("USE_POSTGRES", default=False)
+DB_HOST = env("DB_HOST", default="127.0.0.1")
+DB_PORT = env.int("DB_PORT", default=5432)
+DB_NAME = env("DB_NAME")
+DB_USERNAME = env("DB_USERNAME")
+DB_PASSWORD = env("DB_PASSWORD")
+DB_SCHEMA = env("DB_SCHEMA", default="public")
+DB_APPLICATION_SCHEMAS = env.list("DB_APPLICATION_SCHEMAS", default=[DB_SCHEMA])
+DB_ADMIN_DATABASE = env("DB_ADMIN_DATABASE", default="postgres")
+DB_SSLMODE = env("DB_SSLMODE", default="prefer")
+DB_CONNECT_TIMEOUT = env.int("DB_CONNECT_TIMEOUT", default=10)
+DB_CONN_MAX_AGE = env.int("DB_CONN_MAX_AGE", default=60)
 
-if USE_POSTGRES:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.postgresql",
-            "NAME": env("POSTGRES_DB"),
-            "USER": env("POSTGRES_USER"),
-            "PASSWORD": env("POSTGRES_PASSWORD"),
-            "HOST": env("POSTGRES_HOST"),
-            "PORT": env("POSTGRES_PORT"),
-        }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": DB_NAME,
+        "USER": DB_USERNAME,
+        "PASSWORD": DB_PASSWORD,
+        "HOST": DB_HOST,
+        "PORT": DB_PORT,
+        "CONN_MAX_AGE": DB_CONN_MAX_AGE,
+        "OPTIONS": {
+            "sslmode": DB_SSLMODE,
+            "connect_timeout": DB_CONNECT_TIMEOUT,
+        },
     }
-else:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": str(BASE_DIR / "db.sqlite3"),
-        }
-    }
+}
 
 # Password validation
 PASSWORD_HASHERS = [
@@ -175,7 +183,7 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.SessionAuthentication",
     ),
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
-    "DEFAULT_PAGINATION_CLASS": "core_apps.common.pagination.CustomPageNumberPagination",
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
     "PAGE_SIZE": env.int("REST_PAGINATION_PAGE_SIZE", default=20),
     "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
 }
@@ -212,7 +220,7 @@ DJOSER = {
 # ============================================
 # AUTH
 # ============================================
-AUTH_USER_MODEL = "accounts.User"
+###AUTH_USER_MODEL = "accounts.User"
 AUTHENTICATION_BACKENDS = [
     "social_core.backends.google.GoogleOAuth2",
     "django.contrib.auth.backends.ModelBackend",

@@ -1,0 +1,44 @@
+INFO 2026-06-14 20:07:16,167 django.utils.autoreload autoreload 41308 8608162432 Watching for file changes with StatReloader
+INFO 2026-06-14 20:07:46,172 django.utils.autoreload autoreload 41308 8608162432 /Users/yaelgonzalezhernandez/Dev/appweb-inventory/api/config/django/base.py changed, reloading.
+INFO 2026-06-14 20:07:47,782 django.utils.autoreload autoreload 41399 8627057280 Watching for file changes with StatReloader
+INFO 2026-06-14 20:08:11,276 django.utils.autoreload autoreload 41399 8627057280 /Users/yaelgonzalezhernandez/Dev/appweb-inventory/api/config/django/base.py changed, reloading.
+INFO 2026-06-14 20:08:12,863 django.utils.autoreload autoreload 41468 8671900288 Watching for file changes with StatReloader
+INFO 2026-06-14 20:08:26,892 django.utils.autoreload autoreload 41468 8671900288 /Users/yaelgonzalezhernandez/Dev/appweb-inventory/api/config/django/base.py changed, reloading.
+INFO 2026-06-14 20:08:27,771 django.utils.autoreload autoreload 41512 8629228160 Watching for file changes with StatReloader
+INFO 2026-06-14 20:09:24,072 django.utils.autoreload autoreload 41512 8629228160 /Users/yaelgonzalezhernandez/Dev/appweb-inventory/api/config/django/base.py changed, reloading.
+INFO 2026-06-14 20:09:25,687 django.utils.autoreload autoreload 41668 8607556224 Watching for file changes with StatReloader
+INFO 2026-06-14 20:09:31,277 django.utils.autoreload autoreload 41668 8607556224 /Users/yaelgonzalezhernandez/Dev/appweb-inventory/api/config/django/base.py changed, reloading.
+INFO 2026-06-14 20:09:32,133 django.utils.autoreload autoreload 41702 8643056256 Watching for file changes with StatReloader
+INFO 2026-06-14 20:11:17,955 django.utils.autoreload autoreload 41702 8643056256 /Users/yaelgonzalezhernandez/Dev/appweb-inventory/api/config/django/base.py changed, reloading.
+INFO 2026-06-14 20:11:19,591 django.utils.autoreload autoreload 41957 8600060544 Watching for file changes with StatReloader
+INFO 2026-06-14 20:11:22,087 django.utils.autoreload autoreload 41957 8600060544 /Users/yaelgonzalezhernandez/Dev/appweb-inventory/api/config/django/base.py changed, reloading.
+INFO 2026-06-14 20:11:22,968 django.utils.autoreload autoreload 41979 8601133696 Watching for file changes with StatReloader
+INFO 2026-06-14 20:30:17,443 django.utils.autoreload autoreload 41979 8601133696 /Users/yaelgonzalezhernandez/Dev/appweb-inventory/api/config/django/base.py changed, reloading.
+INFO 2026-06-14 20:30:19,500 django.utils.autoreload autoreload 47111 8674370176 Watching for file changes with StatReloader
+INFO 2026-06-14 20:30:54,675 django.utils.autoreload autoreload 47111 8674370176 /Users/yaelgonzalezhernandez/Dev/appweb-inventory/api/config/django/base.py changed, reloading.
+INFO 2026-06-14 20:30:56,334 django.utils.autoreload autoreload 47212 8637248128 Watching for file changes with StatReloader
+INFO 2026-06-14 20:32:33,681 django.utils.autoreload autoreload 47866 8597250688 Watching for file changes with StatReloader
+WARNING 2026-06-14 20:34:20,828 django.request log 47866 12963094528 Not Found: /
+WARNING 2026-06-14 20:34:20,830 django.channels.server runserver 47866 12928954368 [33mHTTP GET / 404 [0.04, 127.0.0.1:64717][0m
+WARNING 2026-06-14 20:34:20,870 django.request log 47866 12963094528 Not Found: /favicon.ico
+WARNING 2026-06-14 20:34:20,870 django.channels.server runserver 47866 12928954368 [33mHTTP GET /favicon.ico 404 [0.01, 127.0.0.1:64717][0m
+WARNING 2026-06-14 20:34:28,061 django.request log 47866 12963094528 Not Found: /
+WARNING 2026-06-14 20:34:28,062 django.channels.server runserver 47866 12928954368 [33mHTTP GET / 404 [0.02, 127.0.0.1:64807][0m
+WARNING 2026-06-14 20:34:28,096 django.request log 47866 12963094528 Not Found: /favicon.ico
+WARNING 2026-06-14 20:34:28,097 django.channels.server runserver 47866 12928954368 [33mHTTP GET /favicon.ico 404 [0.01, 127.0.0.1:64807][0m
+WARNING 2026-06-14 20:34:38,046 django.request log 47866 12963094528 Not Found: /api/v1
+WARNING 2026-06-14 20:34:38,047 django.channels.server runserver 47866 12928954368 [33mHTTP GET /api/v1 404 [0.02, 127.0.0.1:64807][0m
+WARNING 2026-06-14 20:34:40,351 django.request log 47866 12963094528 Not Found: /api/v1/projects/programs/
+WARNING 2026-06-14 20:34:40,352 django.channels.server runserver 47866 12928954368 [33mHTTP GET /api/v1/projects/programs/ 404 [0.02, 127.0.0.1:64807][0m
+WARNING 2026-06-14 20:34:43,696 django.request log 47866 12963094528 Not Found: /api/v1/
+WARNING 2026-06-14 20:34:43,697 django.channels.server runserver 47866 12928954368 [33mHTTP GET /api/v1/ 404 [0.02, 127.0.0.1:64807][0m
+INFO 2026-06-14 20:34:48,226 django.channels.server runserver 47866 12928954368 [32mHTTP GET /admin 301 [0.02, 127.0.0.1:64807][0m
+INFO 2026-06-14 20:34:48,300 django.channels.server runserver 47866 12928954368 [32mHTTP GET /admin/ 302 [0.07, 127.0.0.1:64807][0m
+INFO 2026-06-14 20:34:48,400 django.channels.server runserver 47866 12928954368 [mHTTP GET /admin/login/?next=/admin/ 200 [0.10, 127.0.0.1:64807][0m
+INFO 2026-06-14 20:34:48,433 django.channels.server runserver 47866 12928954368 [mHTTP GET /static/admin/css/dark_mode.css 200 [0.02, 127.0.0.1:64808][0m
+INFO 2026-06-14 20:34:48,434 django.channels.server runserver 47866 12928954368 [mHTTP GET /static/admin/css/base.css 200 [0.02, 127.0.0.1:64807][0m
+INFO 2026-06-14 20:34:48,434 django.channels.server runserver 47866 12928954368 [mHTTP GET /static/admin/css/login.css 200 [0.02, 127.0.0.1:65050][0m
+INFO 2026-06-14 20:34:48,434 django.channels.server runserver 47866 12928954368 [mHTTP GET /static/admin/js/theme.js 200 [0.02, 127.0.0.1:65052][0m
+INFO 2026-06-14 20:34:48,435 django.channels.server runserver 47866 12928954368 [mHTTP GET /static/admin/css/nav_sidebar.css 200 [0.02, 127.0.0.1:65049][0m
+INFO 2026-06-14 20:34:48,436 django.channels.server runserver 47866 12928954368 [mHTTP GET /static/admin/css/responsive.css 200 [0.02, 127.0.0.1:65051][0m
+INFO 2026-06-14 20:34:48,439 django.channels.server runserver 47866 12928954368 [mHTTP GET /static/admin/js/nav_sidebar.js 200 [0.00, 127.0.0.1:65051][0m
