@@ -1,0 +1,261 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-15 23:05-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: apps.py:10
+msgid "Common"
+msgstr ""
+
+#: choices/lifecycle.py:19
+msgid "Active"
+msgstr ""
+
+#: choices/lifecycle.py:20
+msgid "Trashed"
+msgstr ""
+
+#: choices/lifecycle.py:21
+msgid "Removed"
+msgstr ""
+
+#: choices/lifecycle.py:35
+msgid "Shallow"
+msgstr ""
+
+#: choices/lifecycle.py:36
+msgid "Deep"
+msgstr ""
+
+#: models/base.py:34
+msgid "ID"
+msgstr ""
+
+#: models/base.py:39
+msgid "Created at"
+msgstr ""
+
+#: models/base.py:43
+msgid "Updated at"
+msgstr ""
+
+#: models/base.py:51
+msgid "Created by"
+msgstr ""
+
+#: models/base.py:52
+msgid "User who created this record."
+msgstr ""
+
+#: models/base.py:60
+msgid "Updated by"
+msgstr ""
+
+#: models/base.py:61
+msgid "User who last updated this record."
+msgstr ""
+
+#: models/base.py:68
+msgid "Lifecycle state"
+msgstr ""
+
+#: models/base.py:69
+msgid "Current lifecycle state for user-facing visibility."
+msgstr ""
+
+#: models/base.py:76
+msgid "Trashed at"
+msgstr ""
+
+#: models/base.py:77
+msgid "When this record entered the user's trash."
+msgstr ""
+
+#: models/base.py:85
+msgid "Trashed by"
+msgstr ""
+
+#: models/base.py:86
+msgid "User who moved this record to trash."
+msgstr ""
+
+#: models/base.py:93
+msgid "Removed at"
+msgstr ""
+
+#: models/base.py:94
+msgid "When this record was removed from the user's trash."
+msgstr ""
+
+#: models/base.py:102
+msgid "Removed by"
+msgstr ""
+
+#: models/base.py:103
+msgid "User who performed the second deletion."
+msgstr ""
+
+#: models/image.py:15
+msgid "Width"
+msgstr ""
+
+#: models/image.py:16
+msgid "Image width in pixels."
+msgstr ""
+
+#: models/image.py:22
+msgid "Height"
+msgstr ""
+
+#: models/image.py:23
+msgid "Image height in pixels."
+msgstr ""
+
+#: models/image.py:28
+msgid "Image"
+msgstr ""
+
+#: models/image.py:29
+msgid "Images"
+msgstr ""
+
+#: models/named.py:17
+msgid "Name"
+msgstr ""
+
+#: models/named.py:18
+msgid "Human-readable name of this record."
+msgstr ""
+
+#: models/named.py:21 validators/names.py:21
+msgid "The name cannot be blank."
+msgstr ""
+
+#: models/named.py:22
+#, python-format
+msgid "The name cannot exceed %(limit_value)s characters."
+msgstr ""
+
+#: models/named.py:30
+msgid "Description"
+msgstr ""
+
+#: models/named.py:31
+msgid "Optional short description."
+msgstr ""
+
+#: models/named.py:36
+msgid "Named entity"
+msgstr ""
+
+#: models/named.py:37
+msgid "Named entities"
+msgstr ""
+
+#: models/stored_file.py:31
+msgid "Path"
+msgstr ""
+
+#: models/stored_file.py:32
+msgid "Safe relative storage path."
+msgstr ""
+
+#: models/stored_file.py:37
+msgid "Original name"
+msgstr ""
+
+#: models/stored_file.py:38
+msgid "Original uploaded file name."
+msgstr ""
+
+#: models/stored_file.py:42
+msgid "MIME type"
+msgstr ""
+
+#: models/stored_file.py:43
+msgid "MIME type, such as image/png or application/pdf."
+msgstr ""
+
+#: models/stored_file.py:46
+msgid "Size in bytes"
+msgstr ""
+
+#: models/stored_file.py:47
+msgid "File size in bytes."
+msgstr ""
+
+#: models/stored_file.py:51
+msgid "Extension"
+msgstr ""
+
+#: models/stored_file.py:52
+msgid "Normalized extension without leading dot."
+msgstr ""
+
+#: models/stored_file.py:60
+msgid "SHA-256 checksum"
+msgstr ""
+
+#: models/stored_file.py:61
+msgid "Optional SHA-256 checksum for integrity checks."
+msgstr ""
+
+#: models/stored_file.py:67
+msgid "Stored file"
+msgstr ""
+
+#: models/stored_file.py:68
+msgid "Stored files"
+msgstr ""
+
+#: validators/files.py:21
+msgid "The file extension cannot be blank."
+msgstr ""
+
+#: validators/files.py:25
+#, python-format
+msgid "The file extension cannot exceed %(max_length)s characters."
+msgstr ""
+
+#: validators/files.py:32
+msgid "The file extension contains unsupported characters."
+msgstr ""
+
+#: validators/files.py:47
+msgid "Enter a valid SHA-256 checksum."
+msgstr ""
+
+#: validators/files.py:56
+msgid "The file path cannot be blank."
+msgstr ""
+
+#: validators/files.py:62
+msgid "The file path must be a safe relative path."
+msgstr ""
+
+#: validators/names.py:25
+#, python-format
+msgid "The name must contain at least %(min_length)s characters."
+msgstr ""
+
+#: validators/names.py:32
+msgid "The name cannot start with a number."
+msgstr ""
+
+#: validators/names.py:38
+msgid "The name contains unsupported characters."
+msgstr ""

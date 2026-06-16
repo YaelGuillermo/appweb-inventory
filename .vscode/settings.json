@@ -1,0 +1,24 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/api/venv/bin/python",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/api"
+  ],
+  "python.envFile": "${workspaceFolder}/api/env/.env.local",
+  "python.analysis.diagnosticMode": "workspace",
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.useLibraryCodeForTypes": true,
+
+  "ruff.configuration": "${workspaceFolder}/api/pyproject.toml",
+  "ruff.path": [
+    "${workspaceFolder}/api/venv/bin/ruff"
+  ],
+
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports.ruff": "explicit"
+    }
+  }
+}

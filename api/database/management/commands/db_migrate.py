@@ -16,7 +16,9 @@ class Command(BaseCommand):
     def handle(self, *args, **options) -> None:
         config = get_postgres_config()
         schemas = ensure_database_schemas(config)
-        self.stdout.write(self.style.SUCCESS(f"[database] Schemas ready: {', '.join(schemas)}."))
+        self.stdout.write(
+            self.style.SUCCESS(f"[database] Schemas ready: {', '.join(schemas)}.")
+        )
 
         command_args = []
         if options.get("app_label"):

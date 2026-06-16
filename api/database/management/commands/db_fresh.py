@@ -40,5 +40,7 @@ class Command(SafeDatabaseCommand):
             self.write_warning("Skipped migrations.")
             return
 
-        call_command("migrate", interactive=False, verbosity=options.get("verbosity", 1))
+        call_command(
+            "migrate", interactive=False, verbosity=options.get("verbosity", 1)
+        )
         self.write_success("Fresh database is ready.")

@@ -20,22 +20,21 @@ def list_database_tables(
 ) -> list[DatabaseTableReference]:
     target_schemas = normalize_identifiers(tuple(schemas or config.application_schemas))
 
-    with target_connection(config) as connection:
-        with connection.cursor() as cursor:
-            cursor.execute(
-                """
+    with target_connection(config) as connection, connection.cursor() as cursor:
+        cursor.execute(
+            """
                 SELECT table_schema, table_name
                 FROM information_schema.tables
                 WHERE table_type = 'BASE TABLE'
                   AND table_schema = ANY(%s)
                 ORDER BY table_schema ASC, table_name ASC
                 """,
-                (list(target_schemas),),
-            )
-            return [
-                DatabaseTableReference(schema=row[0], table_name=row[1])
-                for row in cursor.fetchall()
-            ]
+            (list(target_schemas),),
+        )
+        return [
+            DatabaseTableReference(schema=row[0], table_name=row[1])
+            for row in cursor.fetchall()
+        ]
 
 
 def truncate_database_tables(
@@ -54,7 +53,9 @@ def truncate_database_tables(
         return []
 
     table_identifiers = [
-        sql.SQL("{}.{}").format(sql.Identifier(table.schema), sql.Identifier(table.table_name))
+        sql.SQL("{}.{}").format(
+            sql.Identifier(table.schema), sql.Identifier(table.table_name)
+        )
         for table in tables
     ]
 
@@ -62,8 +63,7 @@ def truncate_database_tables(
         sql.SQL(", ").join(table_identifiers)
     )
 
-    with target_connection(config) as connection:
-        with connection.cursor() as cursor:
-            cursor.execute(query)
+    with target_connection(config) as connection, connection.cursor() as cursor:
+        cursor.execute(query)
 
     return tables

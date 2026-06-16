@@ -17,8 +17,16 @@ class Command(BaseCommand):
         schemas = ensure_database_schemas(config)
 
         if created:
-            self.stdout.write(self.style.SUCCESS(f'[database] Database "{config.name}" created.'))
+            self.stdout.write(
+                self.style.SUCCESS(f'[database] Database "{config.name}" created.')
+            )
         else:
-            self.stdout.write(self.style.WARNING(f'[database] Database "{config.name}" already exists.'))
+            self.stdout.write(
+                self.style.WARNING(
+                    f'[database] Database "{config.name}" already exists.'
+                )
+            )
 
-        self.stdout.write(self.style.SUCCESS(f"[database] Schemas ready: {', '.join(schemas)}."))
+        self.stdout.write(
+            self.style.SUCCESS(f"[database] Schemas ready: {', '.join(schemas)}.")
+        )

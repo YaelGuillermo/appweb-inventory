@@ -29,7 +29,11 @@ class Command(SafeDatabaseCommand):
 
         schemas = None
         if options["schemas"]:
-            schemas = [schema.strip() for schema in options["schemas"].split(",") if schema.strip()]
+            schemas = [
+                schema.strip()
+                for schema in options["schemas"].split(",")
+                if schema.strip()
+            ]
 
         config = get_postgres_config()
         reset_schemas = reset_database_schemas(
@@ -41,4 +45,6 @@ class Command(SafeDatabaseCommand):
         if reset_schemas:
             self.write_success(f"Reset schemas: {', '.join(reset_schemas)}.")
         else:
-            self.write_warning("No schemas were reset. Use --include-public if only public is configured.")
+            self.write_warning(
+                "No schemas were reset. Use --include-public if only public is configured."
+            )

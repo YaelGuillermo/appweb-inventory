@@ -69,6 +69,11 @@ def get_postgres_config(alias: str = "default") -> PostgresDatabaseConfig:
         schema=schema,
         application_schemas=application_schemas,
         admin_database=str(getattr(settings, "DB_ADMIN_DATABASE", "postgres")),
-        sslmode=str(options.get("sslmode") or getattr(settings, "DB_SSLMODE", "prefer")),
-        connect_timeout=int(options.get("connect_timeout") or getattr(settings, "DB_CONNECT_TIMEOUT", 10)),
+        sslmode=str(
+            options.get("sslmode") or getattr(settings, "DB_SSLMODE", "prefer")
+        ),
+        connect_timeout=int(
+            options.get("connect_timeout")
+            or getattr(settings, "DB_CONNECT_TIMEOUT", 10)
+        ),
     )

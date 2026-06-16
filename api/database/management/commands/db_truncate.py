@@ -29,7 +29,11 @@ class Command(SafeDatabaseCommand):
 
         schemas = None
         if options["schemas"]:
-            schemas = [schema.strip() for schema in options["schemas"].split(",") if schema.strip()]
+            schemas = [
+                schema.strip()
+                for schema in options["schemas"].split(",")
+                if schema.strip()
+            ]
 
         config = get_postgres_config()
         tables = truncate_database_tables(

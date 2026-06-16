@@ -4,7 +4,9 @@ from pathlib import Path
 from config.env import BASE_DIR, env
 
 LOG_LEVEL = env("DJANGO_LOG_LEVEL", default="INFO")
-LOG_FILE_PATH = Path(env("LOG_FILE_PATH", default=str(BASE_DIR / "logs" / "django.log")))
+LOG_FILE_PATH = Path(
+    env("LOG_FILE_PATH", default=str(BASE_DIR / "logs" / "django.log"))
+)
 
 LOG_FILE_PATH.parent.mkdir(parents=True, exist_ok=True)
 

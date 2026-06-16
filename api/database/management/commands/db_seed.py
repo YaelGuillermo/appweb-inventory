@@ -1,12 +1,14 @@
 # api/database/management/commands/db_seed.py
 from django.core.management import call_command
-from django.core.management.base import BaseCommand, CommandError
+from django.core.management.base import CommandError
 
 from database.management.commands._database_command import SafeDatabaseCommand
 
 
 class Command(SafeDatabaseCommand):
-    help = "Seed database using Django fixtures. Extend this command for model factories."
+    help = (
+        "Seed database using Django fixtures. Extend this command for model factories."
+    )
 
     def add_arguments(self, parser) -> None:
         parser.add_argument(

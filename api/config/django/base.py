@@ -1,6 +1,9 @@
 # api/config/django/base.py
 from datetime import timedelta
 from pathlib import Path
+
+from django.utils.translation import gettext_lazy as _
+
 from config.env import env
 
 # Build paths
@@ -24,7 +27,6 @@ DEBUG = env.bool("DJANGO_DEBUG", default=False)
 ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=[])
 ADMIN_URL = env("DJANGO_ADMIN_URL", default="admin/")
 TIME_ZONE = env("DJANGO_TIME_ZONE", default="UTC")
-LANGUAGE_CODE = env("DJANGO_LANGUAGE_CODE", default="en-us")
 STATIC_URL = env("DJANGO_STATIC_URL", default="/static/")
 MEDIA_URL = env("DJANGO_MEDIA_URL", default="/media/")
 
@@ -54,7 +56,8 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "database.apps.DatabaseConfig",
-    #"core_apps.accounts",
+    "localization.apps.LocalizationConfig",
+    # "core_apps.accounts",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -64,6 +67,7 @@ MIDDLEWARE = [
     "social_django.middleware.SocialAuthExceptionMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -133,15 +137,37 @@ PASSWORD_HASHERS = [
 ]
 
 AUTH_PASSWORD_VALIDATORS = [
-    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
+    {
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"
+    },
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
-# Internationalization
+# ============================================
+# INTERNATIONALIZATION
+# ============================================
+LANGUAGE_CODE = env("DJANGO_LANGUAGE_CODE", default="en-us")
+LANGUAGES = [
+    ("en-us", _("English")),
+    ("es-mx", _("Spanish (Mexico)")),
+]
+LOCALE_PATHS = [
+    BASE_DIR / "locale",
+]
+I18N_IGNORE_PATTERNS = [
+    "venv/*",
+    "env/*",
+    ".venv/*",
+    "staticfiles/*",
+    "media/*",
+    "logs/*",
+    "__pycache__/*",
+    "*.pyc",
+]
+
 USE_I18N = True
-USE_L10N = True
 USE_TZ = True
 SITE_ID = 1
 
@@ -159,13 +185,17 @@ SECURE_SSL_REDIRECT = env.bool("DJANGO_SECURE_SSL_REDIRECT", default=False)
 CSRF_COOKIE_SECURE = env.bool("DJANGO_CSRF_COOKIE_SECURE", default=False)
 SESSION_COOKIE_SECURE = env.bool("DJANGO_SESSION_COOKIE_SECURE", default=False)
 SECURE_HSTS_SECONDS = env.int("DJANGO_SECURE_HSTS_SECONDS", default=0)
-SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool("DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS", default=False)
+SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool(
+    "DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS", default=False
+)
 SECURE_HSTS_PRELOAD = env.bool("DJANGO_SECURE_HSTS_PRELOAD", default=False)
 
 # ============================================
 # EMAIL
 # ============================================
-EMAIL_BACKEND = env("EMAIL_BACKEND", default="django.core.mail.backends.smtp.EmailBackend")
+EMAIL_BACKEND = env(
+    "EMAIL_BACKEND", default="django.core.mail.backends.smtp.EmailBackend"
+)
 EMAIL_HOST = env("EMAIL_HOST", default="")
 EMAIL_PORT = env.int("EMAIL_PORT", default=587)
 EMAIL_HOST_USER = env("EMAIL_HOST_USER", default="")
@@ -192,8 +222,12 @@ REST_FRAMEWORK = {
 # JWT
 # ============================================
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=env.int("JWT_ACCESS_TOKEN_LIFETIME_MINUTES", default=60)),
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=env.int("JWT_REFRESH_TOKEN_LIFETIME_DAYS", default=7)),
+    "ACCESS_TOKEN_LIFETIME": timedelta(
+        minutes=env.int("JWT_ACCESS_TOKEN_LIFETIME_MINUTES", default=60)
+    ),
+    "REFRESH_TOKEN_LIFETIME": timedelta(
+        days=env.int("JWT_REFRESH_TOKEN_LIFETIME_DAYS", default=7)
+    ),
     "ROTATE_REFRESH_TOKENS": True,
     "BLACKLIST_AFTER_ROTATION": True,
     "ALGORITHM": "HS256",

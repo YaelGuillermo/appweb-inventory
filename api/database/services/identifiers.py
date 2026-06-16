@@ -13,7 +13,9 @@ def normalize_identifier(value: str | None, *, default: str = "public") -> str:
     return normalized
 
 
-def normalize_identifiers(values: list[str | None] | tuple[str | None, ...]) -> tuple[str, ...]:
+def normalize_identifiers(
+    values: list[str | None] | tuple[str | None, ...],
+) -> tuple[str, ...]:
     normalized: list[str] = []
 
     for value in values:

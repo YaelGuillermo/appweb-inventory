@@ -1,0 +1,73 @@
+[project]
+requires-python = ">=3.12"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+indent-width = 4
+
+src = [
+    ".",
+    "config",
+    "core_apps",
+    "database",
+]
+
+exclude = [
+    ".git",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache",
+    "__pycache__",
+    "venv",
+    "env",
+    "media",
+    "staticfiles",
+    "logs",
+]
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "F",    # pyflakes
+    "W",    # pycodestyle warnings
+    "I",    # import sorting
+    "B",    # flake8-bugbear
+    "UP",   # pyupgrade
+    "SIM",  # simplify
+    "C4",   # comprehensions
+    "RET",  # return statements
+    "RUF",  # Ruff-specific rules
+]
+
+ignore = [
+    "E501",   # Line length is handled by the formatter.
+    "RUF012", # Django often uses mutable class attributes intentionally.
+]
+
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.lint.isort]
+known-first-party = [
+    "config",
+    "core_apps",
+    "database",
+]
+
+combine-as-imports = true
+force-sort-within-sections = false
+
+[tool.ruff.lint.per-file-ignores]
+"manage.py" = ["INP001"]
+"config/django/*.py" = ["F403", "F405"]
+"config/settings/*.py" = ["F403", "F405"]
+"**/migrations/*.py" = ["ALL"]
+"**/__init__.py" = ["F401"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = true

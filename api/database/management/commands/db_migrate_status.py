@@ -11,4 +11,6 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options) -> None:
         app_labels = options.get("app_label") or []
-        call_command("showmigrations", *app_labels, verbosity=options.get("verbosity", 1))
+        call_command(
+            "showmigrations", *app_labels, verbosity=options.get("verbosity", 1)
+        )

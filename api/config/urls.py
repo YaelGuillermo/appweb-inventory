@@ -1,14 +1,19 @@
 # api/config/urls.py
-from django.contrib import admin
-from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib import admin
+from django.urls import include, path
 
 urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
-    path("api/v1/", include([
-        #path("accounts/", include("core_apps.accounts.urls.main_urls")),
-    ])),
+    path(
+        "api/v1/",
+        include(
+            [
+                # path("accounts/", include("core_apps.accounts.urls.main_urls")),
+            ]
+        ),
+    ),
 ]
 
 if settings.DEBUG:

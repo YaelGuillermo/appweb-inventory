@@ -1,10 +1,13 @@
 # api/config/settings/celery.py
 from kombu import Queue
+
 from config.env import env
 
 REDIS_URL = env("REDIS_URL", default="redis://localhost:6379/0")
 CELERY_BROKER_URL = env("CELERY_BROKER_URL", default=REDIS_URL)
-CELERY_RESULT_BACKEND = env("CELERY_RESULT_BACKEND", default=REDIS_URL.replace("/0", "/1"))
+CELERY_RESULT_BACKEND = env(
+    "CELERY_RESULT_BACKEND", default=REDIS_URL.replace("/0", "/1")
+)
 
 CELERY_TIMEZONE = env("DJANGO_TIME_ZONE", default="UTC")
 CELERY_TASK_ALWAYS_EAGER = env.bool("CELERY_TASK_ALWAYS_EAGER", default=False)
@@ -16,7 +19,9 @@ CELERY_TASK_TRACK_STARTED = True
 
 CELERY_TASK_DEFAULT_QUEUE = env("CELERY_TASK_DEFAULT_QUEUE", default="default")
 CELERY_TASK_DEFAULT_EXCHANGE = env("CELERY_TASK_DEFAULT_EXCHANGE", default="default")
-CELERY_TASK_DEFAULT_ROUTING_KEY = env("CELERY_TASK_DEFAULT_ROUTING_KEY", default="default")
+CELERY_TASK_DEFAULT_ROUTING_KEY = env(
+    "CELERY_TASK_DEFAULT_ROUTING_KEY", default="default"
+)
 
 CELERY_TASK_QUEUE_NAMES = [
     queue_name.strip()
