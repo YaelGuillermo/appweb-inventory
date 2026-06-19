@@ -1,4 +1,3 @@
-# api/core_apps/common/models/stored_file.py
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -8,6 +7,13 @@ from core_apps.common.constants import (
     FILE_MIME_TYPE_MAX_LENGTH,
     FILE_ORIGINAL_NAME_MAX_LENGTH,
     FILE_PATH_MAX_LENGTH,
+)
+from core_apps.common.normalizers import (
+    normalize_file_extension,
+    normalize_mime_type,
+    normalize_original_name,
+    normalize_sha256_checksum,
+    normalize_storage_path,
 )
 from core_apps.common.validators import (
     validate_file_extension,
@@ -80,15 +86,8 @@ class StoredFileModel(BaseModel):
 
     def clean(self) -> None:
         super().clean()
-
-        if isinstance(self.path, str):
-            self.path = self.path.strip()
-
-        if isinstance(self.original_name, str):
-            self.original_name = self.original_name.strip()
-
-        if isinstance(self.mime_type, str):
-            self.mime_type = self.mime_type.strip().lower()
-
-        if isinstance(self.extension, str):
-            self.extension = self.extension.strip().lower().removeprefix(".")
+        self.path = normalize_storage_path(self.path)
+        self.original_name = normalize_original_name(self.original_name)
+        self.mime_type = normalize_mime_type(self.mime_type)
+        self.extension = normalize_file_extension(self.extension)
+        self.checksum_sha256 = normalize_sha256_checksum(self.checksum_sha256)

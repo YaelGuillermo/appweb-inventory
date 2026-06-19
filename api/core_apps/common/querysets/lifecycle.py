@@ -27,15 +27,6 @@ class LifecycleQuerySet(models.QuerySet):
     def not_removed(self):
         return self.exclude(lifecycle_state=LifecycleState.REMOVED)
 
-    def visible_to_user(self):
-        return self.active()
-
-    def visible_in_trash(self):
-        return self.trashed()
-
-    def visible_to_admin(self):
-        return self.all()
-
     def with_lifecycle_state(self, state: str | LifecycleState):
         return self.filter(lifecycle_state=LifecycleState(state))
 

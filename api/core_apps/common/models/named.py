@@ -1,9 +1,9 @@
-# api/core_apps/common/models/named.py
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 from core_apps.common.constants import DESCRIPTION_MAX_LENGTH, NAME_MAX_LENGTH
-from core_apps.common.validators import normalize_human_name, validate_name_rules
+from core_apps.common.normalizers import normalize_human_name
+from core_apps.common.validators import validate_name_rules
 
 from .base import BaseModel
 

@@ -1,17 +1,14 @@
-# api/core_apps/common/validators/names.py
+from __future__ import annotations
+
 import re
 
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
 from core_apps.common.constants import NAME_MIN_LENGTH
+from core_apps.common.normalizers import normalize_human_name
 
 NAME_ALLOWED_RE = re.compile(r"^[\w\s\-.,:;()/#&+áéíóúÁÉÍÓÚñÑüÜ]+$")
-
-
-def normalize_human_name(value: str | None) -> str:
-    """Return a clean single-spaced human-readable name."""
-    return " ".join(str(value or "").split())
 
 
 def validate_name_rules(value: str) -> None:

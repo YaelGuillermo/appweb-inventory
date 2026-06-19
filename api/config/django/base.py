@@ -18,6 +18,8 @@ DOMAIN = env("DOMAIN", default="localhost")
 SITE_URL = env("SITE_URL", default="")
 API_URL = env("API_URL", default="")
 FRONTEND_URL = env("FRONTEND_URL", default="")
+API_VERSION = env("API_VERSION", default="v1")
+ENVIRONMENT = env("ENVIRONMENT", default="development")
 
 # ============================================
 # DJANGO CORE
@@ -73,6 +75,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "core_apps.common.middleware.request_id.RequestIdMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -207,16 +210,25 @@ DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL", default="webmaster@localhost")
 # ============================================
 # DJANGO REST FRAMEWORK
 # ============================================
+REST_PAGINATION_PAGE_SIZE = env.int("REST_PAGINATION_PAGE_SIZE", default=20)
+REST_MAX_PAGE_SIZE = env.int("REST_MAX_PAGE_SIZE", default=100)
+
 REST_FRAMEWORK = {
+    "DEFAULT_RENDERER_CLASSES": [
+        "core_apps.common.renderers.json.CustomJSONRenderer",
+    ],
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
         "rest_framework.authentication.SessionAuthentication",
     ),
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
-    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
-    "PAGE_SIZE": env.int("REST_PAGINATION_PAGE_SIZE", default=20),
+    "DEFAULT_PAGINATION_CLASS": (
+        "core_apps.common.pagination.page_number.CustomPageNumberPagination"
+    ),
+    "PAGE_SIZE": REST_PAGINATION_PAGE_SIZE,
     "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
 }
+
 
 # ============================================
 # JWT

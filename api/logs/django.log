@@ -42,3 +42,24 @@ INFO 2026-06-14 20:34:48,434 django.channels.server runserver 47866 12928954368 
 INFO 2026-06-14 20:34:48,435 django.channels.server runserver 47866 12928954368 [mHTTP GET /static/admin/css/nav_sidebar.css 200 [0.02, 127.0.0.1:65049][0m
 INFO 2026-06-14 20:34:48,436 django.channels.server runserver 47866 12928954368 [mHTTP GET /static/admin/css/responsive.css 200 [0.02, 127.0.0.1:65051][0m
 INFO 2026-06-14 20:34:48,439 django.channels.server runserver 47866 12928954368 [mHTTP GET /static/admin/js/nav_sidebar.js 200 [0.00, 127.0.0.1:65051][0m
+INFO 2026-06-18 21:42:30,749 django.utils.autoreload autoreload 57477 8605676160 Watching for file changes with StatReloader
+INFO 2026-06-18 21:53:58,387 django.utils.autoreload autoreload 57477 8605676160 /Users/yaelgonzalezhernandez/Dev/appweb-inventory/api/core_apps/common/responses/hateoas.py changed, reloading.
+INFO 2026-06-18 21:54:00,479 django.utils.autoreload autoreload 58949 8675693184 Watching for file changes with StatReloader
+INFO 2026-06-18 21:55:31,359 django.utils.autoreload autoreload 58949 8675693184 /Users/yaelgonzalezhernandez/Dev/appweb-inventory/api/core_apps/common/pagination/page_number.py changed, reloading.
+INFO 2026-06-18 21:55:33,226 django.utils.autoreload autoreload 59201 8597303936 Watching for file changes with StatReloader
+INFO 2026-06-18 22:05:43,818 django.utils.autoreload autoreload 59201 8597303936 /Users/yaelgonzalezhernandez/Dev/appweb-inventory/api/config/django/base.py changed, reloading.
+INFO 2026-06-18 22:05:45,867 django.utils.autoreload autoreload 61964 8661111424 Watching for file changes with StatReloader
+INFO 2026-06-18 22:09:39,320 django.utils.autoreload autoreload 61964 8661111424 /Users/yaelgonzalezhernandez/Dev/appweb-inventory/api/core_apps/common/pagination/page_number.py changed, reloading.
+INFO 2026-06-18 22:09:41,193 django.utils.autoreload autoreload 62647 8607314560 Watching for file changes with StatReloader
+INFO 2026-06-18 22:09:55,267 django.utils.autoreload autoreload 62647 8607314560 /Users/yaelgonzalezhernandez/Dev/appweb-inventory/api/core_apps/common/pagination/__init__.py changed, reloading.
+INFO 2026-06-18 22:09:57,172 django.utils.autoreload autoreload 62723 8606950016 Watching for file changes with StatReloader
+INFO 2026-06-18 22:11:49,242 django.utils.autoreload autoreload 62723 8606950016 /Users/yaelgonzalezhernandez/Dev/appweb-inventory/api/core_apps/common/middleware/request_id.py changed, reloading.
+INFO 2026-06-18 22:11:51,130 django.utils.autoreload autoreload 63078 8660861568 Watching for file changes with StatReloader
+INFO 2026-06-18 22:12:05,216 django.utils.autoreload autoreload 63078 8660861568 /Users/yaelgonzalezhernandez/Dev/appweb-inventory/api/core_apps/common/middleware/request_id.py changed, reloading.
+INFO 2026-06-18 22:12:06,932 django.utils.autoreload autoreload 63135 8677937792 Watching for file changes with StatReloader
+INFO 2026-06-18 22:12:15,683 django.utils.autoreload autoreload 63135 8677937792 /Users/yaelgonzalezhernandez/Dev/appweb-inventory/api/core_apps/common/responses/envelope.py changed, reloading.
+INFO 2026-06-18 22:12:17,456 django.utils.autoreload autoreload 63170 8636273280 Watching for file changes with StatReloader
+INFO 2026-06-18 22:12:20,003 django.utils.autoreload autoreload 63170 8636273280 /Users/yaelgonzalezhernandez/Dev/appweb-inventory/api/core_apps/common/responses/hateoas.py changed, reloading.
+INFO 2026-06-18 22:12:21,038 django.utils.autoreload autoreload 63189 8600552064 Watching for file changes with StatReloader
+INFO 2026-06-18 22:12:23,525 django.utils.autoreload autoreload 63189 8600552064 /Users/yaelgonzalezhernandez/Dev/appweb-inventory/api/core_apps/common/responses/messages.py changed, reloading.
+INFO 2026-06-18 22:12:24,459 django.utils.autoreload autoreload 63209 8634086016 Watching for file changes with StatReloader

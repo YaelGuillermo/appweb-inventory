@@ -9,8 +9,7 @@ class LifecycleManager(models.Manager.from_queryset(LifecycleQuerySet)):
     Single manager for lifecycle-aware models.
 
     It intentionally does not hide records automatically. Each view/service must
-    choose the right queryset method: `.active()`, `.trashed()`, `.removed()`,
-    `.visible_to_user()`, `.visible_in_trash()`, or `.visible_to_admin()`.
+    choose the right queryset method: `.active()`, `.trashed()`, `.removed()`
     """
 
     pass
