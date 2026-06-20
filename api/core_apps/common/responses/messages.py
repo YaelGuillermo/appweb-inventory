@@ -1,3 +1,4 @@
+# api/core_apps/common/responses/messages.py
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -63,9 +64,19 @@ ERROR_MESSAGES: dict[int, ResponseMessage] = {
         description="The requested resource does not exist or is not available.",
         duration_ms=DEFAULT_ERROR_DURATION_MS,
     ),
+    405: ResponseMessage(
+        title="Method not allowed",
+        description="This HTTP method is not allowed for this resource.",
+        duration_ms=DEFAULT_ERROR_DURATION_MS,
+    ),
     409: ResponseMessage(
         title="Conflict",
         description="The request conflicts with the current state of the resource.",
+        duration_ms=DEFAULT_ERROR_DURATION_MS,
+    ),
+    415: ResponseMessage(
+        title="Unsupported media type",
+        description="The submitted content type is not supported.",
         duration_ms=DEFAULT_ERROR_DURATION_MS,
     ),
     429: ResponseMessage(

@@ -1,3 +1,4 @@
+# api/core_apps/common/renderers/json.py
 from __future__ import annotations
 
 from typing import Any
@@ -14,9 +15,7 @@ class CustomJSONRenderer(JSONRenderer):
     """
     Unified JSON renderer for the API.
 
-    All response keys are snake_case:
-    status, status_code, path, message, data, pagination, links, limits, meta,
-    timestamp.
+    Every public JSON key stays in snake_case.
     """
 
     charset = "utf-8"
@@ -47,6 +46,7 @@ class CustomJSONRenderer(JSONRenderer):
                 status_code=status_code,
                 message=getattr(response, "message", None),
                 errors=getattr(response, "errors", None),
+                limits=getattr(response, "limits", None),
             )
         else:
             normalized = self._normalize_success_data(data)

@@ -1,3 +1,4 @@
+# api/core_apps/common/responses/envelope.py
 from __future__ import annotations
 
 from typing import Any
@@ -24,7 +25,9 @@ def get_request_id(request) -> str:
 
 def get_locale(request) -> str:
     return getattr(request, "LANGUAGE_CODE", None) or getattr(
-        settings, "LANGUAGE_CODE", "en-us"
+        settings,
+        "LANGUAGE_CODE",
+        "en-us",
     )
 
 
@@ -75,8 +78,9 @@ def build_error_envelope(
     status_code: int,
     message: dict | None = None,
     errors: dict | None = None,
+    limits: dict | None = None,
 ) -> dict[str, Any]:
-    normalized_errors = errors or normalize_errors(data)
+    normalized_errors = errors or normalize_errors(data, status_code=status_code)
 
     payload = {
         "status": False,
@@ -90,5 +94,8 @@ def build_error_envelope(
 
     if normalized_errors:
         payload["errors"] = normalized_errors
+
+    if limits:
+        payload["limits"] = limits
 
     return payload
