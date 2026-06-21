@@ -10,7 +10,7 @@ urlpatterns = [
         "api/v1/",
         include(
             [
-                # path("accounts/", include("core_apps.accounts.urls.main_urls")),
+                path("accounts/", include("core_apps.accounts.urls.main_urls")),
             ]
         ),
     ),
