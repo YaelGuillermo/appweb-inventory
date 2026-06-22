@@ -1,0 +1,8 @@
+-r base.in
+
+pytest==8.4.1
+pytest-django==4.11.1
+pytest-cov==6.2.1
+pytest-mock==3.14.1
+factory-boy==3.3.3
+freezegun==1.5.1

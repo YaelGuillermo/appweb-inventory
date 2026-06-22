@@ -64,3 +64,8 @@ INFO 2026-06-18 22:12:21,038 django.utils.autoreload autoreload 63189 8600552064
 INFO 2026-06-18 22:12:23,525 django.utils.autoreload autoreload 63189 8600552064 /Users/yaelgonzalezhernandez/Dev/appweb-inventory/api/core_apps/common/responses/messages.py changed, reloading.
 INFO 2026-06-18 22:12:24,459 django.utils.autoreload autoreload 63209 8634086016 Watching for file changes with StatReloader
 INFO 2026-06-20 22:34:45,914 django.utils.autoreload autoreload 8471 8662360704 Watching for file changes with StatReloader
+INFO 2026-06-21 21:34:57,641 django.utils.autoreload autoreload 12627 8598925952 Watching for file changes with StatReloader
+INFO 2026-06-21 21:43:55,919 django.utils.autoreload autoreload 12627 8598925952 /Users/yaelgonzalezhernandez/Dev/appweb-inventory/api/core_apps/accounts/urls/main_urls.py changed, reloading.
+INFO 2026-06-21 21:43:57,751 django.utils.autoreload autoreload 17090 8596062848 Watching for file changes with StatReloader
+INFO 2026-06-21 21:44:02,458 django.utils.autoreload autoreload 17090 8596062848 /Users/yaelgonzalezhernandez/Dev/appweb-inventory/api/config/urls.py changed, reloading.
+INFO 2026-06-21 21:44:04,179 django.utils.autoreload autoreload 17132 8668914304 Watching for file changes with StatReloader

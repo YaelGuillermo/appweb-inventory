@@ -1,0 +1,48 @@
+WARNING 2026-06-21 21:40:45,619 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/users/
+WARNING 2026-06-21 21:40:45,763 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/users/
+WARNING 2026-06-21 21:40:45,771 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/jwt/create/
+WARNING 2026-06-21 21:40:45,789 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/jwt/create/
+WARNING 2026-06-21 21:40:45,799 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/jwt/create/
+WARNING 2026-06-21 21:40:45,807 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/users/
+WARNING 2026-06-21 21:40:45,816 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/jwt/refresh/
+WARNING 2026-06-21 21:40:45,823 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/jwt/refresh/
+WARNING 2026-06-21 21:40:45,830 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/users/
+WARNING 2026-06-21 21:40:45,839 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/jwt/verify/
+WARNING 2026-06-21 21:40:45,847 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/users/
+WARNING 2026-06-21 21:40:45,892 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/users/me/
+WARNING 2026-06-21 21:40:45,899 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/users/me/
+WARNING 2026-06-21 21:40:45,906 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/users/
+WARNING 2026-06-21 21:40:45,914 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/users/
+WARNING 2026-06-21 21:40:45,922 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/users/
+WARNING 2026-06-21 21:40:45,930 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/users/set_password/
+WARNING 2026-06-21 21:40:45,937 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/users/
+WARNING 2026-06-21 21:40:45,945 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/users/
+WARNING 2026-06-21 21:40:45,953 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/users/
+WARNING 2026-06-21 21:40:45,961 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/users/
+WARNING 2026-06-21 21:40:45,968 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/users/
+WARNING 2026-06-21 21:40:45,975 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/users/
+WARNING 2026-06-21 21:40:45,981 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/users/
+WARNING 2026-06-21 21:40:45,988 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/users/
+WARNING 2026-06-21 21:40:45,995 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/o/google-oauth2/
+WARNING 2026-06-21 21:40:46,035 django.request log 14056 8634888832 Not Found: /api/v1/accounts/auth/users/
+WARNING 2026-06-21 21:44:49,263 django.request log 17273 8635814528 Unauthorized: /api/v1/accounts/jwt/create/
+WARNING 2026-06-21 21:44:49,267 django.request log 17273 8635814528 Unauthorized: /api/v1/accounts/jwt/create/
+WARNING 2026-06-21 21:44:49,271 django.request log 17273 8635814528 Unauthorized: /api/v1/accounts/jwt/create/
+WARNING 2026-06-21 21:44:49,273 django.request log 17273 8635814528 Bad Request: /api/v1/accounts/jwt/create/
+WARNING 2026-06-21 21:44:49,286 django.request log 17273 8635814528 Bad Request: /api/v1/accounts/jwt/refresh/
+WARNING 2026-06-21 21:44:49,288 django.request log 17273 8635814528 Unauthorized: /api/v1/accounts/jwt/refresh/
+WARNING 2026-06-21 21:44:49,298 django.request log 17273 8635814528 Unauthorized: /api/v1/accounts/jwt/verify/
+WARNING 2026-06-21 21:44:49,308 django.request log 17273 8635814528 Unauthorized: /api/v1/accounts/users/me/
+WARNING 2026-06-21 21:44:49,310 django.request log 17273 8635814528 Unauthorized: /api/v1/accounts/users/me/
+WARNING 2026-06-21 21:44:49,317 django.request log 17273 8635814528 Unauthorized: /api/v1/accounts/users/me/
+WARNING 2026-06-21 21:44:49,325 django.request log 17273 8635814528 Unauthorized: /api/v1/accounts/users/me/
+WARNING 2026-06-21 21:44:49,337 django.request log 17273 8635814528 Unauthorized: /api/v1/accounts/users/set_password/
+WARNING 2026-06-21 21:44:49,345 django.request log 17273 8635814528 Bad Request: /api/v1/accounts/users/set_password/
+WARNING 2026-06-21 21:44:49,352 django.request log 17273 8635814528 Bad Request: /api/v1/accounts/users/set_password/
+WARNING 2026-06-21 21:44:49,510 django.request log 17273 8635814528 Bad Request: /api/v1/accounts/users/
+WARNING 2026-06-21 21:44:49,513 django.request log 17273 8635814528 Bad Request: /api/v1/accounts/users/
+WARNING 2026-06-21 21:44:49,516 django.request log 17273 8635814528 Bad Request: /api/v1/accounts/users/
+WARNING 2026-06-21 21:44:49,519 django.request log 17273 8635814528 Bad Request: /api/v1/accounts/users/
+WARNING 2026-06-21 21:44:49,522 django.request log 17273 8635814528 Bad Request: /api/v1/accounts/users/
+WARNING 2026-06-21 21:44:49,529 django.request log 17273 8635814528 Bad Request: /api/v1/accounts/o/google-oauth2/
+WARNING 2026-06-21 21:44:49,533 django.request log 17273 8635814528 Unauthorized: /api/v1/accounts/users/
