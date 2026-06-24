@@ -6,11 +6,13 @@ from django.urls import include, path
 
 urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
+    path("health/", include("core_apps.infrastructure.health.urls")),
     path(
         "api/v1/",
         include(
             [
                 path("accounts/", include("core_apps.accounts.urls.main_urls")),
+                path("infra/", include("core_apps.infrastructure.urls")),
             ]
         ),
     ),

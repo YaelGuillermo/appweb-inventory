@@ -58,6 +58,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "core_apps.accounts.apps.AccountsConfig",
+    "core_apps.infrastructure.apps.InfrastructureConfig",
     "database.apps.DatabaseConfig",
     "localization.apps.LocalizationConfig",
 ]
@@ -76,6 +77,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "core_apps.common.middleware.request_id.RequestIdMiddleware",
+    "core_apps.infrastructure.logging.middleware.HttpRequestLoggingMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -292,4 +294,5 @@ from config.settings.sessions import *  # noqa
 from config.settings.celery import *  # noqa
 from config.settings.channels import *  # noqa
 from config.settings.auth import *  # noqa
+from config.settings.infrastructure import *  # noqa
 from config.settings.logging import *  # noqa
