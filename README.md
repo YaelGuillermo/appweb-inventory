@@ -1,8 +1,8 @@
-```markdown
-# Inventory Management System
+# Inventory Management API
 
-A full-stack inventory management system built with **React + TypeScript** for the frontend and **Django + Django REST Framework** for the backend.  
-The system allows businesses to manage products, stock levels, and inventory transactions with a clean web interface and a RESTful API.
+A backend inventory management API built with **Django** and **Django REST Framework**.
+
+At the moment, this project only includes the API layer. No frontend application is currently included.
 
 ---
 
@@ -15,7 +15,6 @@ The system allows businesses to manage products, stock levels, and inventory tra
 - Category management
 - Supplier management
 - REST API with authentication
-- Responsive frontend dashboard
 - Search and filtering for products
 - Transaction logs for auditing
 
@@ -23,23 +22,16 @@ The system allows businesses to manage products, stock levels, and inventory tra
 
 ## Tech Stack
 
-### Frontend
-- React
-- TypeScript
-- Vite
-- Axios
-- React Router
-- TailwindCSS
-
 ### Backend
+
 - Django
 - Django REST Framework
 - PostgreSQL / SQLite
-- Simple JWT authentication
+- Simple JWT Authentication
 
 ---
 
-## Backend Setup (Django)
+## Backend Setup
 
 ### 1. Clone Repository
 
@@ -54,13 +46,15 @@ cd inventory-system/backend
 python -m venv venv
 ```
 
-Activate:
+Activate the virtual environment:
+
+**Linux / macOS**
 
 ```bash
-source venv/bin/activate   # Linux/Mac
+source venv/bin/activate
 ```
 
-Windows:
+**Windows**
 
 ```bash
 venv\Scripts\activate
@@ -84,7 +78,7 @@ python manage.py migrate
 python manage.py createsuperuser
 ```
 
-### 6. Run Server
+### 6. Run the Development Server
 
 ```bash
 python manage.py runserver
@@ -92,31 +86,9 @@ python manage.py runserver
 
 ---
 
-## Frontend Setup (React)
-
-### 1. Navigate to Frontend
-
-```bash
-cd ../frontend
-```
-
-### 2. Install Dependencies
-
-```bash
-npm install
-```
-
-### 3. Run Server
-
-```bash
-npm run dev
-```
-
----
-
 ## Environment Variables
 
-Create `.env` file in the backend directory:
+Create a `.env` file in the backend directory:
 
 ```env
 DEBUG=True
@@ -128,19 +100,36 @@ DATABASE_URL=sqlite:///db.sqlite3
 
 ## API Documentation
 
-API endpoints are available at `http://localhost:8000/api/`
+The API is available at:
 
-- `GET /api/products/` - List all products
-- `POST /api/products/` - Create new product
-- `GET /api/products/{id}/` - Get a product
-- `PUT /api/products/{id}/` - Update a product
-- `DELETE /api/products/{id}/` - Delete a product
-- `GET /api/transactions/` - List transactions
-- `POST /api/stock/adjust/` - Adjust stock
+```text
+http://localhost:8000/api/
+```
+
+### Products
+
+- `GET /api/products/` — List all products
+- `POST /api/products/` — Create a new product
+- `GET /api/products/{id}/` — Retrieve a product
+- `PUT /api/products/{id}/` — Update a product
+- `DELETE /api/products/{id}/` — Delete a product
+
+### Transactions
+
+- `GET /api/transactions/` — List all inventory transactions
+
+### Stock Management
+
+- `POST /api/stock/adjust/` — Adjust product stock levels
+
+---
+
+## Project Status
+
+This project is currently focused on providing a RESTful API for inventory management. Frontend applications and client interfaces are not included at this stage.
 
 ---
 
 ## License
 
 MIT License
-```
