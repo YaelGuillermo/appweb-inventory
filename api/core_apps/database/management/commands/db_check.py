@@ -1,8 +1,10 @@
-# api/database/management/commands/db_check.py
+# api/core_apps/database/management/commands/db_check.py
+from __future__ import annotations
+
 from django.core.management.base import BaseCommand
 
-from database.services.config import get_postgres_config
-from database.services.postgres_admin import database_exists
+from core_apps.database.services.config import get_postgres_config
+from core_apps.database.services.postgres_admin import database_exists
 
 
 class Command(BaseCommand):

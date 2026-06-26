@@ -1,9 +1,11 @@
-# api/database/management/commands/db_fresh.py
+# api/core_apps/database/management/commands/db_fresh.py
+from __future__ import annotations
+
 from django.core.management import call_command
 
-from database.management.commands._database_command import SafeDatabaseCommand
-from database.services.config import get_postgres_config
-from database.services.postgres_admin import (
+from core_apps.database.management.commands._database_command import SafeDatabaseCommand
+from core_apps.database.services.config import get_postgres_config
+from core_apps.database.services.postgres_admin import (
     create_database_if_missing,
     drop_database_if_exists,
     ensure_database_schemas,
@@ -41,6 +43,8 @@ class Command(SafeDatabaseCommand):
             return
 
         call_command(
-            "migrate", interactive=False, verbosity=options.get("verbosity", 1)
+            "migrate",
+            interactive=False,
+            verbosity=options.get("verbosity", 1),
         )
         self.write_success("Fresh database is ready.")

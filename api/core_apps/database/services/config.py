@@ -1,11 +1,16 @@
-# api/database/services/config.py
+# api/core_apps/database/services/config.py
+from __future__ import annotations
+
 from dataclasses import dataclass
 from typing import Any
 
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 
-from .identifiers import normalize_identifier, normalize_identifiers
+from core_apps.database.services.identifiers import (
+    normalize_identifier,
+    normalize_identifiers,
+)
 
 
 @dataclass(frozen=True, slots=True)
@@ -48,7 +53,7 @@ def get_postgres_config(alias: str = "default") -> PostgresDatabaseConfig:
     if not database:
         raise ImproperlyConfigured(f'Database alias "{alias}" is not configured.')
 
-    engine = database.get("ENGINE", "")
+    engine = str(database.get("ENGINE", ""))
     if "postgresql" not in engine:
         raise ImproperlyConfigured(
             f'Database alias "{alias}" must use PostgreSQL. Current ENGINE={engine!r}.'
@@ -59,11 +64,15 @@ def get_postgres_config(alias: str = "default") -> PostgresDatabaseConfig:
     application_schemas = normalize_identifiers(
         tuple(getattr(settings, "DB_APPLICATION_SCHEMAS", (schema,)))
     )
+    database_name = str(database.get("NAME") or "").strip()
+
+    if not database_name:
+        raise ImproperlyConfigured(f'Database alias "{alias}" has no NAME configured.')
 
     return PostgresDatabaseConfig(
         host=str(database.get("HOST") or "localhost"),
         port=int(database.get("PORT") or 5432),
-        name=str(database.get("NAME") or ""),
+        name=database_name,
         username=str(database.get("USER") or ""),
         password=str(database.get("PASSWORD") or ""),
         schema=schema,

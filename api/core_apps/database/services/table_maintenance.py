@@ -1,11 +1,13 @@
-# api/database/services/table_maintenance.py
+# api/core_apps/database/services/table_maintenance.py
+from __future__ import annotations
+
 from dataclasses import dataclass
 
 from psycopg import sql
 
-from .config import PostgresDatabaseConfig
-from .identifiers import normalize_identifiers
-from .postgres_admin import target_connection
+from core_apps.database.services.config import PostgresDatabaseConfig
+from core_apps.database.services.identifiers import normalize_identifiers
+from core_apps.database.services.postgres_admin import target_connection
 
 
 @dataclass(frozen=True, slots=True)
@@ -23,12 +25,12 @@ def list_database_tables(
     with target_connection(config) as connection, connection.cursor() as cursor:
         cursor.execute(
             """
-                SELECT table_schema, table_name
-                FROM information_schema.tables
-                WHERE table_type = 'BASE TABLE'
-                  AND table_schema = ANY(%s)
-                ORDER BY table_schema ASC, table_name ASC
-                """,
+            SELECT table_schema, table_name
+            FROM information_schema.tables
+            WHERE table_type = 'BASE TABLE'
+              AND table_schema = ANY(%s)
+            ORDER BY table_schema ASC, table_name ASC
+            """,
             (list(target_schemas),),
         )
         return [
@@ -54,11 +56,11 @@ def truncate_database_tables(
 
     table_identifiers = [
         sql.SQL("{}.{}").format(
-            sql.Identifier(table.schema), sql.Identifier(table.table_name)
+            sql.Identifier(table.schema),
+            sql.Identifier(table.table_name),
         )
         for table in tables
     ]
-
     query = sql.SQL("TRUNCATE TABLE {} RESTART IDENTITY CASCADE").format(
         sql.SQL(", ").join(table_identifiers)
     )

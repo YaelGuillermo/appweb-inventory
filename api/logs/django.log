@@ -69,3 +69,7 @@ INFO 2026-06-21 21:43:55,919 django.utils.autoreload autoreload 12627 8598925952
 INFO 2026-06-21 21:43:57,751 django.utils.autoreload autoreload 17090 8596062848 Watching for file changes with StatReloader
 INFO 2026-06-21 21:44:02,458 django.utils.autoreload autoreload 17090 8596062848 /Users/yaelgonzalezhernandez/Dev/appweb-inventory/api/config/urls.py changed, reloading.
 INFO 2026-06-21 21:44:04,179 django.utils.autoreload autoreload 17132 8668914304 Watching for file changes with StatReloader
+INFO 2026-06-25 22:20:47,362 django.utils.autoreload autoreload 6056 8636936832 Watching for file changes with StatReloader
+INFO 2026-06-25 22:22:07,215 django.utils.autoreload autoreload 6056 8636936832 /Users/yaelgonzalezhernandez/Dev/appweb-inventory/api/config/django/base.py changed, reloading.
+INFO 2026-06-25 22:22:09,139 django.utils.autoreload autoreload 6307 8597815936 Watching for file changes with StatReloader
+INFO 2026-06-25 22:23:11,919 django.utils.autoreload autoreload 6753 8596656768 Watching for file changes with StatReloader

@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from django.db import connection
 
-from database.services.identifiers import normalize_identifier
+from core_apps.database.services.identifiers import normalize_identifier
 
 REGISTRY_TABLE_NAME = "sql_assets_registry"
 

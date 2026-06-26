@@ -1,12 +1,14 @@
-# api/database/services/postgres_admin.py
+# api/core_apps/database/services/postgres_admin.py
+from __future__ import annotations
+
 from collections.abc import Iterator
 from contextlib import contextmanager
 
 import psycopg
 from psycopg import Connection, sql
 
-from .config import PostgresDatabaseConfig
-from .identifiers import normalize_identifiers
+from core_apps.database.services.config import PostgresDatabaseConfig
+from core_apps.database.services.identifiers import normalize_identifiers
 
 
 @contextmanager
@@ -42,11 +44,11 @@ def terminate_database_connections(config: PostgresDatabaseConfig) -> None:
     with admin_connection(config) as connection, connection.cursor() as cursor:
         cursor.execute(
             """
-                SELECT pg_terminate_backend(pid)
-                FROM pg_stat_activity
-                WHERE datname = %s
-                  AND pid <> pg_backend_pid()
-                """,
+            SELECT pg_terminate_backend(pid)
+            FROM pg_stat_activity
+            WHERE datname = %s
+              AND pid <> pg_backend_pid()
+            """,
             (config.name,),
         )
 

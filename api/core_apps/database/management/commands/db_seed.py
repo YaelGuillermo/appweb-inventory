@@ -1,8 +1,10 @@
-# api/database/management/commands/db_seed.py
+# api/core_apps/database/management/commands/db_seed.py
+from __future__ import annotations
+
 from django.core.management import call_command
 from django.core.management.base import CommandError
 
-from database.management.commands._database_command import SafeDatabaseCommand
+from core_apps.database.management.commands._database_command import SafeDatabaseCommand
 
 
 class Command(SafeDatabaseCommand):
@@ -16,17 +18,14 @@ class Command(SafeDatabaseCommand):
             nargs="*",
             help="Fixture names or paths to load with Django loaddata.",
         )
-        parser.add_argument(
-            "--force",
-            action="store_true",
-            help="Required to load seed data.",
-        )
+        self.add_force_argument(parser)
 
     def handle(self, *args, **options) -> None:
         self.require_force(
             force=options["force"],
             message="This command loads seed data into the database.",
         )
+        self.protect_production(allow_production=options["allow_production"])
 
         fixtures = options.get("fixtures") or []
         if not fixtures:

@@ -1,7 +1,9 @@
-# api/database/management/commands/db_truncate.py
-from database.management.commands._database_command import SafeDatabaseCommand
-from database.services.config import get_postgres_config
-from database.services.table_maintenance import truncate_database_tables
+# api/core_apps/database/management/commands/db_truncate.py
+from __future__ import annotations
+
+from core_apps.database.management.commands._database_command import SafeDatabaseCommand
+from core_apps.database.services.config import get_postgres_config
+from core_apps.database.services.table_maintenance import truncate_database_tables
 
 
 class Command(SafeDatabaseCommand):

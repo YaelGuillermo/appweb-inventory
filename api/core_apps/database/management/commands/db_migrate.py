@@ -1,9 +1,11 @@
-# api/database/management/commands/db_migrate.py
+# api/core_apps/database/management/commands/db_migrate.py
+from __future__ import annotations
+
 from django.core.management import call_command
 from django.core.management.base import BaseCommand
 
-from database.services.config import get_postgres_config
-from database.services.postgres_admin import ensure_database_schemas
+from core_apps.database.services.config import get_postgres_config
+from core_apps.database.services.postgres_admin import ensure_database_schemas
 
 
 class Command(BaseCommand):
@@ -26,4 +28,8 @@ class Command(BaseCommand):
         if options.get("migration_name"):
             command_args.append(options["migration_name"])
 
-        call_command("migrate", *command_args, verbosity=options.get("verbosity", 1))
+        call_command(
+            "migrate",
+            *command_args,
+            verbosity=options.get("verbosity", 1),
+        )

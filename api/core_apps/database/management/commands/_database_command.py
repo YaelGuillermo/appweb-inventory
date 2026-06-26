@@ -1,4 +1,6 @@
-# api/database/management/commands/_database_command.py
+# api/core_apps/database/management/commands/_database_command.py
+from __future__ import annotations
+
 from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
 

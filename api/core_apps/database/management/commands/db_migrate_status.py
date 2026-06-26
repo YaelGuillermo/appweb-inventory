@@ -1,4 +1,6 @@
-# api/database/management/commands/db_migrate_status.py
+# api/core_apps/database/management/commands/db_migrate_status.py
+from __future__ import annotations
+
 from django.core.management import call_command
 from django.core.management.base import BaseCommand
 
@@ -12,5 +14,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options) -> None:
         app_labels = options.get("app_label") or []
         call_command(
-            "showmigrations", *app_labels, verbosity=options.get("verbosity", 1)
+            "showmigrations",
+            *app_labels,
+            verbosity=options.get("verbosity", 1),
         )

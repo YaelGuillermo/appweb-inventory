@@ -1,8 +1,10 @@
-# api/database/management/commands/db_create.py
+# api/core_apps/database/management/commands/db_create.py
+from __future__ import annotations
+
 from django.core.management.base import BaseCommand
 
-from database.services.config import get_postgres_config
-from database.services.postgres_admin import (
+from core_apps.database.services.config import get_postgres_config
+from core_apps.database.services.postgres_admin import (
     create_database_if_missing,
     ensure_database_schemas,
 )

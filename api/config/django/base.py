@@ -59,7 +59,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "core_apps.accounts.apps.AccountsConfig",
     "core_apps.infrastructure.apps.InfrastructureConfig",
-    "database.apps.DatabaseConfig",
+    "core_apps.database.apps.DatabaseConfig",
     "localization.apps.LocalizationConfig",
 ]
 

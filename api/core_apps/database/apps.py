@@ -1,9 +1,9 @@
-# api/database/apps.py
+# api/core_apps/database/apps.py
 from django.apps import AppConfig
 
 
 class DatabaseConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "database"
+    name = "core_apps.database"
     label = "database"
     verbose_name = "Database Utilities"

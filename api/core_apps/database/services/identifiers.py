@@ -1,5 +1,8 @@
-# api/database/services/identifiers.py
+# api/core_apps/database/services/identifiers.py
+from __future__ import annotations
+
 import re
+from collections.abc import Iterable
 
 IDENTIFIER_RE = re.compile(r"^[a-zA-Z_][a-zA-Z0-9_]*$")
 
@@ -13,9 +16,7 @@ def normalize_identifier(value: str | None, *, default: str = "public") -> str:
     return normalized
 
 
-def normalize_identifiers(
-    values: list[str | None] | tuple[str | None, ...],
-) -> tuple[str, ...]:
+def normalize_identifiers(values: Iterable[str | None]) -> tuple[str, ...]:
     normalized: list[str] = []
 
     for value in values:
